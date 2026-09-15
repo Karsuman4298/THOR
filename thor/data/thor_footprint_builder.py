@@ -718,7 +718,7 @@ class FootprintBuilder(Dataset, THORDatasetBase):
         out_dir = self.out_dir
         fp = Path(file_path)
 
-        file_date = datetime.strptime(str(fp.relative_to(fp.parents[2])), "%Y/%m/%d")
+        file_date = datetime.strptime(fp.name, "%Y-%m-%d")
 
         relative_path = fp.relative_to(fp.parents[3])
         out_dir = out_dir / relative_path
