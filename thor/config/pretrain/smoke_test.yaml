@@ -127,7 +127,7 @@ dataset:
     # KEY KNOBS ──────────────────────────────────────────────────────
     data_percent: 1.0       # use 100% of the downloaded 300MB
     sample_ratio: 0.01      # sample very few crops per tile
-    skip_build_index: true  # skip index build since data is partial
+    skip_build_index: false  # skip index build since data is partial
     # ─────────────────────────────────────────────────────────────────
 
     era5_data: false
