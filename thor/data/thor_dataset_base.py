@@ -1025,17 +1025,15 @@ class THORDatasetBase:
 
         pathname = os.path.join(str(path), self.FILENAME_GLOB)
         logger.info(f"Searching for files in {path} with glob {self.FILENAME_GLOB}")
-        # for r in tqdm(map(process_func, glob.iglob(pathname, recursive=False))):
-        with mp.Pool(8) as pool:
-            for r in tqdm(
-                pool.imap_unordered(process_func, glob.iglob(pathname, recursive=False), chunksize=2),
-                desc="Loading files",
-                disable=(hasattr(self, "global_rank") and self.global_rank != 0),
-            ):
-                if r is not None:
-                    file_dirs.append(r[0])
-                    file_path_map[r[0]] = r[1]
-                    missing_products += r[2]
+        for r in tqdm(
+            map(process_func, glob.iglob(pathname, recursive=False)),
+            desc="Loading files",
+            disable=(hasattr(self, "global_rank") and self.global_rank != 0),
+        ):
+            if r is not None:
+                file_dirs.append(r[0])
+                file_path_map[r[0]] = r[1]
+                missing_products += r[2]
 
         logger.info(f"missing product stats: {missing_products}")
 
