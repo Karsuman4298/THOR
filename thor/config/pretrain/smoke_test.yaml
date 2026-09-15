@@ -137,7 +137,7 @@ dataset:
       - temperature_2m
       - total_precipitation_sum
 
-    important_products: ["dem-10m"]
+    important_products: ["S3"]
     multilook_S1: true
     S1_multilook_factors: [1, 2]
     use_incidence_angle: true
