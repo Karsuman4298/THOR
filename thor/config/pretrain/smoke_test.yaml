@@ -72,10 +72,10 @@ dataset:
     # ----------------------------------------------------------------
     # !! UPDATE THESE PATHS to point at your local data copy !!
     # ----------------------------------------------------------------
-    paths: "/nr/bamjo/jodata5/pro/fm4cs/data/lumi/v6_all"
-    land_cover_dir: "/nr/bamjo/jodata5/pro/fm4cs/data/lumi/world_cover"
-    dem_dir: "/nr/bamjo/jodata5/pro/fm4cs/data/lumi/dem"
-    era5_data_dir: "/nr/bamjo/jodata5/pro/fm4cs/data/lumi/era5_daily_netcdf"
+    paths: "/scratch/skaushik8/Suman_kar/THOR/THOR-data"
+    land_cover_dir: "/scratch/skaushik8/Suman_kar/THOR/THOR-data"
+    dem_dir: "/scratch/skaushik8/Suman_kar/THOR/THOR-data"
+    era5_data_dir: "/scratch/skaushik8/Suman_kar/THOR/THOR-data"
 
     dem_products:
       - dem-10m
@@ -100,12 +100,12 @@ dataset:
       - 0.3
 
     # KEY KNOBS ──────────────────────────────────────────────────────
-    data_percent: 0.01      # use 1% of available tile files
-    sample_ratio: 0.001     # sample very few crops per tile
-    # skip_build_index: true  # uncomment if index already built
+    data_percent: 1.0       # use 100% of the downloaded 300MB
+    sample_ratio: 0.01      # sample very few crops per tile
+    skip_build_index: true  # skip index build since data is partial
     # ─────────────────────────────────────────────────────────────────
 
-    era5_data: true
+    era5_data: false
     era5_land_products:
       - volumetric_soil_water_layer_1
       - skin_temperature
