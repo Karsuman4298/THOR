@@ -89,15 +89,40 @@ dataset:
     standardize: true
     overwrite: false
 
-    # Only smallest ground covers → faster loading & smaller tensors
     ground_covers:
       - 960
       - 1440
       - 1920
+      - 2880
+      - 3360 
+      - 4800
+      - 5760
+      - 7680
+      - 9600
+      - 11520
+      - 14400
+      - 19200
+      - 23040
+      - 28800
+      - 30720
+      - 46080
     ground_cover_weights:
-      - 0.4
-      - 0.3
-      - 0.3
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.05
+      - 0.1
+      - 0.2
 
     # KEY KNOBS ──────────────────────────────────────────────────────
     data_percent: 1.0       # use 100% of the downloaded 300MB
@@ -152,6 +177,19 @@ models:
         - 960
         - 1440
         - 1920
+        - 2880
+        - 3360 
+        - 4800
+        - 5760
+        - 7680
+        - 9600
+        - 11520
+        - 14400
+        - 19200
+        - 23040
+        - 28800
+        - 30720
+        - 46080
       masking_schema:
         spatial: random_same_ratio
         spectral: all
